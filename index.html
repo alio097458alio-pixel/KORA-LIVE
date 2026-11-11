@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0e1a" />
+  <title>KORA LIVE | منصة كرة القدم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+</head>
+<body>
+
+  <!-- 🎥 خلفية الفيديو / الصورة الراعية -->
+  <div class="bg-layer">
+    <video autoplay muted loop playsinline poster="assets/sponsor.jpg">
+      <source src="assets/sponsor.mp4" type="video/mp4" />
+    </video>
+    <div class="bg-overlay"></div>
+  </div>
+
+  <!-- 🚪 شاشة الدخول -->
+  <section id="loginScreen" class="login-screen">
+    <div class="login-card glass">
+      <div class="logo">
+        <span class="logo-icon">⚽</span>
+        <h1>KORA <span class="accent">LIVE</span></h1>
+        <p>منصة كرة القدم المتكاملة</p>
+      </div>
+
+      <form id="loginForm" autocomplete="off">
+        <div class="input-group">
+          <label>اسم المستخدم</label>
+          <input type="text" id="username" placeholder="admin" required />
+        </div>
+        <div class="input-group">
+          <label>كلمة المرور</label>
+          <input type="password" id="password" placeholder="••••••••" required />
+        </div>
+        <button type="submit" class="btn-primary">دخول</button>
+        <p id="loginError" class="error-msg"></p>
+      </form>
+
+      <div class="login-footer">
+        <span>🔒 اتصال آمن ومشفّر</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📱 التطبيق الرئيسي -->
+  <div id="app" class="app hidden">
+
+    <!-- Header -->
+    <header class="topbar glass">
+      <div class="brand">
+        <span class="logo-icon">⚽</span>
+        <h2>KORA <span class="accent">LIVE</span></h2>
+      </div>
+      <nav class="nav">
+        <a href="#" class="nav-link active">الرئيسية</a>
+        <a href="#" class="nav-link">المباريات</a>
+        <a href="#" class="nav-link">الدوريات</a>
+        <a href="#" class="nav-link">الفرق</a>
+        <a href="#" class="nav-link">الأخبار</a>
+      </nav>
+      <div class="user-area">
+        <span id="userBadge" class="badge">ADMIN</span>
+        <button id="logoutBtn" class="btn-ghost">خروج</button>
+      </div>
+    </header>
+
+    <!-- Live Ticker -->
+    <section class="live-ticker glass">
+      <div class="ticker-label">
+        <span class="pulse-dot"></span> مباشر
+      </div>
+      <div class="ticker-track" id="liveTicker"></div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>عِش كرة القدم <span class="accent">لحظة بلحظة</span></h1>
+        <p>نتائج مباشرة، إحصائيات دقيقة، وتغطية شاملة لأهم الدوريات العالمية.</p>
+        <div class="hero-actions">
+          <button class="btn-primary">شاهد المباريات المباشرة</button>
+          <button class="btn-outline">آخر الأخبار</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Matches Today -->
+    <section class="section">
+      <div class="section-head">
+        <h2>مباريات اليوم</h2>
+        <a href="#" class="see-all">عرض الكل ←</a>
+      </div>
+      <div class="cards-grid" id="todayMatches"></div>
+    </section>
+
+    <!-- News -->
+    <section class="section">
+      <div class="section-head">
+        <h2>أهم الأخبار</h2>
+        <a href="#" class="see-all">عرض الكل ←</a>
+      </div>
+      <div class="news-grid" id="newsGrid"></div>
+    </section>
+
+    <!-- Leagues -->
+    <section class="section">
+      <div class="section-head">
+        <h2>الدوريات الأكثر متابعة</h2>
+      </div>
+      <div class="leagues-row" id="leaguesRow"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass">
+      <p>© 2026 KORA LIVE — جميع الحقوق محفوظة</p>
+      <p class="admin-contact">📞 Admin: 01152800730</p>
+    </footer>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
