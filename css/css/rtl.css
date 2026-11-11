@@ -1,0 +1,3 @@
+/* RTL Adjustments */
+[dir="rtl"] .ticker-track { direction: ltr; }
+[dir="rtl"] .ticker-item { direction: rtl; }
